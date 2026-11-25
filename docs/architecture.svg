@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1220 730" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CatalogDawn System Architecture Diagram">
+  <defs>
+    <pattern id="archDotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#D4D4D8" />
+    </pattern>
+    <style>
+      .svg-title { font-family: 'Caveat', 'Segoe Print', Georgia, serif; }
+      .svg-mono { font-family: 'Martian Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1220" height="730" fill="#FFFFFF" />
+  <rect x="0" y="0" width="1220" height="730" fill="url(#archDotGrid)" opacity="0.68" />
+
+  <!-- LAYER 1: BROWSER & SERVERLESS AWS EDGE -->
+  <path d="M 22,18 Q 610,14 1196,19 Q 1201,92 1195,164 Q 608,168 24,163 Q 19,90 22,18 Z" fill="#FAFAFA" stroke="#71717A" stroke-width="1.6" stroke-dasharray="8 6" />
+  <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#C2410C">1. Browser &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + Python 3.12 Lambda)</text>
+
+  <g>
+    <path d="M 38,55 Q 136,52 234,56 Q 238,96 233,138 Q 135,141 39,137 Q 35,95 38,55 Z" fill="#DBEAFE" stroke="#18181B" stroke-width="2.1" />
+    <text x="136" y="83" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#18181B">Catalog Studio UI</text>
+    <text x="136" y="105" text-anchor="middle" class="svg-mono" font-size="10" font-weight="600" fill="#1E3A8A">4 Live Catalog Views</text>
+    <text x="136" y="123" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#3F3F46">URL hash state · Dark mode</text>
+  </g>
+
+  <path d="M 237,96 Q 268,92 298,96" fill="none" stroke="#18181B" stroke-width="2.1" stroke-dasharray="6 4" />
+  <path d="M 289,90 L 300,96 L 289,102" fill="none" stroke="#18181B" stroke-width="2.1" />
+  <text x="268" y="86" text-anchor="middle" class="svg-title" font-size="16" font-weight="700" fill="#18181B">HTTPS</text>
+
+  <g>
+    <path d="M 304,55 Q 430,51 556,56 Q 560,96 555,138 Q 428,142 305,137 Q 301,95 304,55 Z" fill="#FFEDD5" stroke="#18181B" stroke-width="2.1" />
+    <text x="430" y="83" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#18181B">Amazon CloudFront</text>
+    <text x="430" y="105" text-anchor="middle" class="svg-mono" font-size="10" font-weight="600" fill="#9A3412">Single HTTPS Entry Point</text>
+    <text x="430" y="123" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#3F3F46">UI -&gt; S3 · /api/* -&gt; Lambda</text>
+  </g>
+
+  <path d="M 559,78 Q 596,66 634,66" fill="none" stroke="#18181B" stroke-width="2" stroke-dasharray="6 4" />
+  <path d="M 625,60 L 636,66 L 625,72" fill="none" stroke="#18181B" stroke-width="2" />
+  <text x="596" y="59" text-anchor="middle" class="svg-title" font-size="15" font-weight="700" fill="#065F46">Static UI</text>
+
+  <path d="M 559,114 Q 596,126 634,126" fill="none" stroke="#18181B" stroke-width="2" stroke-dasharray="6 4" />
+  <path d="M 625,120 L 636,126 L 625,132" fill="none" stroke="#18181B" stroke-width="2" />
+  <text x="596" y="143" text-anchor="middle" class="svg-title" font-size="15" font-weight="700" fill="#C2410C">/api/*</text>
+
+  <g>
+    <path d="M 640,39 Q 775,36 910,40 Q 913,65 909,90 Q 774,93 641,89 Q 637,64 640,39 Z" fill="#DCFCE7" stroke="#18181B" stroke-width="2" />
+    <text x="775" y="61" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">Private S3 Bucket</text>
+    <text x="775" y="79" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#065F46">web/index.html · OAC Only</text>
+  </g>
+
+  <g>
+    <path d="M 640,100 Q 775,97 910,101 Q 913,127 909,153 Q 774,156 641,152 Q 637,126 640,100 Z" fill="#FFE8D6" stroke="#18181B" stroke-width="2" />
+    <text x="775" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API (Python 3.12)</text>
+    <text x="775" y="142" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#9A3412">catalog_dawn/server.py · 512 MB</text>
+  </g>
+
+  <g transform="rotate(-1.4 1055 95)">
+    <path d="M 936,40 L 1178,40 L 1178,134 L 1160,150 L 936,150 Z" fill="#FEF3C7" stroke="#18181B" stroke-width="2" />
+    <path d="M 1160,150 L 1160,134 L 1178,134" fill="#FDE68A" stroke="#18181B" stroke-width="1.6" />
+    <text x="950" y="66" class="svg-title" font-size="19" font-weight="700" fill="#92400E">Zero Idle Cost</text>
+    <text x="950" y="89" class="svg-title" font-size="17" font-weight="600" fill="#18181B">• $0.00/hr idle AWS footprint</text>
+    <text x="950" y="110" class="svg-title" font-size="17" font-weight="600" fill="#18181B">• 0% pack-size variant mixups</text>
+    <text x="950" y="131" class="svg-title" font-size="17" font-weight="700" fill="#C2410C">• 2-tier Nova Micro / Lite cascade</text>
+  </g>
+
+  <!-- LAYER 2: INGESTION & ENTITY RESOLUTION -->
+  <path d="M 22,196 Q 610,192 1196,197 Q 1200,268 1195,338 Q 608,342 24,337 Q 19,266 22,196 Z" fill="#FFF7ED" stroke="#C2410C" stroke-width="1.6" stroke-dasharray="8 6" />
+  <text x="36" y="219" class="svg-title" font-size="21" font-weight="700" fill="#C2410C">2. Project Dawn Offer Ingestion &amp; Variant-Safe ASIN Entity Resolution</text>
+
+  <g>
+    <path d="M 42,233 Q 218,229 394,234 Q 398,279 393,324 Q 216,328 43,323 Q 39,278 42,233 Z" fill="#FFEDD5" stroke="#18181B" stroke-width="2.1" />
+    <text x="218" y="261" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#9A3412">HTML / JSON-LD / CSV Parser</text>
+    <text x="218" y="283" text-anchor="middle" class="svg-mono" font-size="9.8" font-weight="700" fill="#18181B">offer_extractor.py · Modulo-10 GTIN</text>
+    <text x="218" y="303" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#7C2D12">Quarantines bad UPCs &amp; price hijacks</text>
+  </g>
+
+  <g>
+    <path d="M 432,233 Q 610,229 788,234 Q 792,279 787,324 Q 609,328 433,323 Q 429,278 432,233 Z" fill="#DBEAFE" stroke="#18181B" stroke-width="2.1" />
+    <text x="610" y="261" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#18181B">Blocking + 3-Gram MinHash</text>
+    <text x="610" y="283" text-anchor="middle" class="svg-mono" font-size="9.8" font-weight="600" fill="#1E3A8A">entity_resolver.py · 64 Permutations</text>
+    <text x="610" y="303" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#3F3F46">Blocks by brand:product_type + MPN</text>
+  </g>
+
+  <g>
+    <path d="M 824,233 Q 1001,229 1178,234 Q 1182,279 1177,324 Q 1000,328 825,323 Q 821,278 824,233 Z" fill="#FEE2E2" stroke="#18181B" stroke-width="2.1" />
+    <text x="1001" y="261" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#991B1B">Hard Variant Veto Gate</text>
+    <text x="1001" y="283" text-anchor="middle" class="svg-mono" font-size="9.8" font-weight="700" fill="#18181B">pack_count · storage · voltage · size</text>
+    <text x="1001" y="303" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#7F1D1D">0% false variant conflation across 200 pairs</text>
+  </g>
+
+  <!-- LAYER 3: NORMALIZATION & CONTRADICTION ENGINE -->
+  <path d="M 22,380 Q 610,376 1196,381 Q 1200,452 1195,522 Q 608,526 24,521 Q 19,450 22,380 Z" fill="#F0FDF4" stroke="#065F46" stroke-width="1.6" stroke-dasharray="8 6" />
+  <text x="36" y="404" class="svg-title" font-size="21" font-weight="700" fill="#065F46">3. Cross-Marketplace (US / DE / JP) Ontology Normalizer &amp; Contradiction Resolver</text>
+
+  <g>
+    <path d="M 42,418 Q 312,414 582,419 Q 586,464 581,508 Q 310,512 43,507 Q 39,462 42,418 Z" fill="#DCFCE7" stroke="#18181B" stroke-width="2.1" />
+    <text x="312" y="446" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#18181B">Multi-Locale Unit Canonicalizer</text>
+    <text x="312" y="468" text-anchor="middle" class="svg-mono" font-size="9.8" font-weight="700" fill="#065F46">0,065 kW -&gt; 65 W · 16.9 fl oz -&gt; 500 ml · mAh -&gt; Wh</text>
+    <text x="312" y="489" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#3F3F46">Sub-millisecond deterministic ontology rules</text>
+  </g>
+
+  <g>
+    <path d="M 624,418 Q 901,414 1178,419 Q 1182,464 1177,508 Q 900,512 625,507 Q 621,462 624,418 Z" fill="#DBEAFE" stroke="#18181B" stroke-width="2.1" />
+    <text x="901" y="446" text-anchor="middle" class="svg-title" font-size="22" font-weight="700" fill="#18181B">Multi-Seller Contradiction Resolver</text>
+    <text x="901" y="468" text-anchor="middle" class="svg-mono" font-size="9.8" font-weight="700" fill="#1E3A8A">OEM Manual (1.0) + Returns (0.92) &gt; Seller Claim (0.50)</text>
+    <text x="901" y="489" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#3F3F46">Span grounding check blocks hallucinated specs</text>
+  </g>
+
+  <!-- LAYER 4: BEDROCK CASCADE & SELF-LEARNING LOOP -->
+  <g>
+    <path d="M 42,574 Q 312,569 582,575 Q 586,642 581,708 Q 310,713 43,707 Q 39,640 42,574 Z" fill="#F3E8FF" stroke="#18181B" stroke-width="2.2" />
+    <text x="312" y="604" text-anchor="middle" class="svg-title" font-size="23" font-weight="700" fill="#5B21B6">4. Amazon Bedrock Cascade</text>
+    <text x="312" y="629" text-anchor="middle" class="svg-mono" font-size="10" font-weight="700" fill="#18181B">Nova Micro + Nova Lite · Converse API</text>
+    <text x="312" y="651" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#4C1D95">Extracts prose specs &amp; synthesizes SLS rules</text>
+    <rect x="92" y="666" width="440" height="28" fill="#FFFFFF" stroke="#18181B" stroke-width="1.6" />
+    <text x="312" y="684" text-anchor="middle" class="svg-mono" font-size="9.6" font-weight="700" fill="#C2410C">79.0% Lower Token Cost per 10k SKUs</text>
+  </g>
+
+  <g>
+    <path d="M 624,574 Q 901,569 1178,575 Q 1182,642 1177,708 Q 900,713 625,707 Q 621,640 624,574 Z" fill="#FEF3C7" stroke="#18181B" stroke-width="2.2" />
+    <text x="901" y="604" text-anchor="middle" class="svg-title" font-size="23" font-weight="700" fill="#92400E">4. Self-Learning Holdout Gate &amp; SQLite</text>
+    <text x="901" y="629" text-anchor="middle" class="svg-mono" font-size="10" font-weight="700" fill="#18181B">64-Record Holdout + SHA-256 WAL Audit</text>
+    <text x="901" y="651" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#78350F">Promotes rules only at &gt;=95% precision &amp; &lt;=2% FPR</text>
+    <rect x="681" y="666" width="440" height="28" fill="#DCFCE7" stroke="#18181B" stroke-width="1.6" />
+    <text x="901" y="684" text-anchor="middle" class="svg-mono" font-size="9.6" font-weight="700" fill="#065F46">Holdout Defect Recall: 37.5% -&gt; 93.8%</text>
+  </g>
+</svg>

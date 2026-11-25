@@ -1,0 +1,311 @@
+{
+  "service": "catalog-dawn-sls",
+  "benchmark_timestamp_utc": "2026-11-25T22:40:43Z",
+  "environment": {
+    "python_version": "3.14.6",
+    "platform": "Darwin 25.6.0 (arm64)",
+    "aws_region": "us-west-2",
+    "bedrock_models": [
+      "us.amazon.nova-micro-v1:0",
+      "us.amazon.nova-lite-v1:0"
+    ],
+    "audit_store": "SQLite WAL + SHA-256 hash chain"
+  },
+  "headline_kpis": {
+    "offer_payloads_tested": 48,
+    "offer_guard_accuracy_pct": 100.0,
+    "gtin_corrupt_blocked": "10 / 10",
+    "price_hijacks_quarantined": "10 / 10",
+    "offer_extract_p50_ms": 0.048,
+    "offer_extract_p95_ms": 0.135,
+    "entity_pairs_total": 200,
+    "entity_resolution_correct": 200,
+    "entity_resolution_accuracy_pct": 100.0,
+    "naive_baseline_correct": 99,
+    "naive_baseline_accuracy_pct": 49.5,
+    "adversarial_variant_traps": 104,
+    "variant_conflation_dawn": 0,
+    "variant_conflation_dawn_pct": 0.0,
+    "variant_conflation_naive": 100,
+    "variant_conflation_naive_pct": 96.2,
+    "entity_resolve_p50_ms": 1.128,
+    "entity_resolve_p95_ms": 1.67,
+    "normalization_cases_total": 24,
+    "canonical_attr_accuracy_pct": 100.0,
+    "contradictions_caught": "12 / 12",
+    "contradiction_catch_pct": 100.0,
+    "ungrounded_hallucinations_accepted": 0,
+    "rufus_readiness_before_avg": 8,
+    "rufus_readiness_after_avg": 100,
+    "deterministic_norm_p50_ms": 0.05,
+    "sls_holdout_records": 64,
+    "sls_rules_promoted": 3,
+    "sls_noisy_rules_rejected": 1,
+    "sls_holdout_recall_before_pct": 37.5,
+    "sls_holdout_recall_after_pct": 93.8,
+    "sls_holdout_precision_pct": 100.0,
+    "bedrock_calls_measured": 15,
+    "nova_micro_p50_ms": 348.0,
+    "nova_lite_p50_ms": 634.0,
+    "bedrock_overall_p50_ms": 543.0,
+    "bedrock_overall_p95_ms": 795.0,
+    "bedrock_mean_tokens": 288.3,
+    "bedrock_total_tokens": 4324,
+    "cascaded_cost_per_10k_skus_usd": 0.1171,
+    "single_tier_cost_per_10k_skus_usd": 0.558,
+    "cascade_token_cost_savings_pct": 79.0,
+    "sqlite_audit_rows_verified": 102,
+    "sqlite_audit_verify_ms": 2.152
+  },
+  "entity_trap_comparisons": [
+    {
+      "pair_id": "ER-TRAP-001",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Anker Prime 67W USB-C GaN Wall Charger 3-Port Compact Fast Charger Black (3-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B0C4YTB56H",
+      "naive_similarity": 0.8643
+    },
+    {
+      "pair_id": "ER-TRAP-002",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Anker Prime 67W USB-C GaN Wall Charger 3-Port Compact Fast Charger Black (4-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B0C4YTB56H",
+      "naive_similarity": 0.8455
+    },
+    {
+      "pair_id": "ER-TRAP-003",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Anker Prime 67W USB-C GaN Wall Charger 3-Port Compact Fast Charger Black (6-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B0C4YTB56H",
+      "naive_similarity": 0.8643
+    },
+    {
+      "pair_id": "ER-TRAP-004",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Brita Standard Water Pitcher and Dispenser Replacement Filters BPA-Free White (1-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B00006IV0P",
+      "naive_similarity": 0.8514
+    },
+    {
+      "pair_id": "ER-TRAP-005",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Brita Standard Water Pitcher and Dispenser Replacement Filters BPA-Free White (2-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B00006IV0P",
+      "naive_similarity": 0.8327
+    },
+    {
+      "pair_id": "ER-TRAP-006",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Brita Standard Water Pitcher and Dispenser Replacement Filters BPA-Free White (4-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B00006IV0P",
+      "naive_similarity": 0.8389
+    },
+    {
+      "pair_id": "ER-TRAP-007",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Brita Standard Water Pitcher and Dispenser Replacement Filters BPA-Free White (8-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B00004SU18",
+      "naive_similarity": 0.8452
+    },
+    {
+      "pair_id": "ER-TRAP-008",
+      "slice": "adversarial_trap_pack_count",
+      "offer_title": "Brita Standard Water Pitcher and Dispenser Replacement Filters BPA-Free White (10-Pack)",
+      "dawn_decision": "CREATE_CHILD_VARIANT_ASIN",
+      "dawn_veto": "HARD_VETO_PACK_COUNT",
+      "naive_decision": "MATCH_EXISTING_ASIN",
+      "naive_wrong_asin": "B00006IV0P",
+      "naive_similarity": 0.8027
+    }
+  ],
+  "normalization_samples": [
+    {
+      "case_id": "NORM-01-US",
+      "asin": "B0B3N5M78Q",
+      "locale": "US",
+      "cascade_tier": "TIER_2_NOVA_LITE_RECONCILER",
+      "contradiction_detected": true,
+      "rufus_before": 15,
+      "rufus_after": 100,
+      "bedrock_ms": 543.0,
+      "tokens": 400
+    },
+    {
+      "case_id": "NORM-02-DE",
+      "asin": "B0C4YTB56H",
+      "locale": "DE",
+      "cascade_tier": "TIER_2_NOVA_LITE_RECONCILER",
+      "contradiction_detected": true,
+      "rufus_before": 15,
+      "rufus_after": 100,
+      "bedrock_ms": 434.0,
+      "tokens": 432
+    },
+    {
+      "case_id": "NORM-03-JP",
+      "asin": "B09ANKERJP1",
+      "locale": "JP",
+      "cascade_tier": "TIER_0_DETERMINISTIC",
+      "contradiction_detected": false,
+      "rufus_before": 0,
+      "rufus_after": 100,
+      "bedrock_ms": 0.0,
+      "tokens": 0
+    },
+    {
+      "case_id": "NORM-04-US",
+      "asin": "B08X6P2K19",
+      "locale": "US",
+      "cascade_tier": "TIER_0_DETERMINISTIC",
+      "contradiction_detected": false,
+      "rufus_before": 0,
+      "rufus_after": 100,
+      "bedrock_ms": 0.0,
+      "tokens": 0
+    },
+    {
+      "case_id": "NORM-05-US",
+      "asin": "B0B3N5M78Q",
+      "locale": "US",
+      "cascade_tier": "TIER_2_NOVA_LITE_RECONCILER",
+      "contradiction_detected": true,
+      "rufus_before": 15,
+      "rufus_after": 100,
+      "bedrock_ms": 547.0,
+      "tokens": 400
+    },
+    {
+      "case_id": "NORM-06-DE",
+      "asin": "B0C4YTB56H",
+      "locale": "DE",
+      "cascade_tier": "TIER_2_NOVA_LITE_RECONCILER",
+      "contradiction_detected": true,
+      "rufus_before": 15,
+      "rufus_after": 100,
+      "bedrock_ms": 0.0,
+      "tokens": 0
+    },
+    {
+      "case_id": "NORM-07-JP",
+      "asin": "B09ANKERJP1",
+      "locale": "JP",
+      "cascade_tier": "TIER_0_DETERMINISTIC",
+      "contradiction_detected": false,
+      "rufus_before": 0,
+      "rufus_after": 100,
+      "bedrock_ms": 0.0,
+      "tokens": 0
+    },
+    {
+      "case_id": "NORM-08-US",
+      "asin": "B08X6P2K19",
+      "locale": "US",
+      "cascade_tier": "TIER_0_DETERMINISTIC",
+      "contradiction_detected": false,
+      "rufus_before": 0,
+      "rufus_after": 100,
+      "bedrock_ms": 0.0,
+      "tokens": 0
+    }
+  ],
+  "self_learning_rules": [
+    {
+      "rule_id": "SLS-RULE-VOLT-201",
+      "cluster_id": "CLUS-VOLT-110",
+      "category": "appliance",
+      "target_attribute": "input_voltage_v",
+      "return_count_30d": 14,
+      "holdout_tp": 5,
+      "holdout_fp": 0,
+      "holdout_precision_pct": 100.0,
+      "false_positive_rate_pct": 0.0,
+      "status": "PROMOTED_ACTIVE",
+      "bedrock_ms": 775.0,
+      "tokens": 307
+    },
+    {
+      "rule_id": "SLS-RULE-CARE-202",
+      "cluster_id": "CLUS-CARE-DW",
+      "category": "insulated_tumbler",
+      "target_attribute": "dishwasher_safe",
+      "return_count_30d": 11,
+      "holdout_tp": 5,
+      "holdout_fp": 0,
+      "holdout_precision_pct": 100.0,
+      "false_positive_rate_pct": 0.0,
+      "status": "PROMOTED_ACTIVE",
+      "bedrock_ms": 920.0,
+      "tokens": 266
+    },
+    {
+      "rule_id": "SLS-RULE-M10-203",
+      "cluster_id": "CLUS-THREAD-M10",
+      "category": "thread_adapter",
+      "target_attribute": "thread_pitch_mm",
+      "return_count_30d": 9,
+      "holdout_tp": 5,
+      "holdout_fp": 0,
+      "holdout_precision_pct": 100.0,
+      "false_positive_rate_pct": 0.0,
+      "status": "PROMOTED_ACTIVE",
+      "bedrock_ms": 497.0,
+      "tokens": 252
+    },
+    {
+      "rule_id": "SLS-RULE-NOISY-204",
+      "cluster_id": "CLUS-NOISY-SHIPPING",
+      "category": "appliance",
+      "target_attribute": "packaging_weight",
+      "return_count_30d": 6,
+      "holdout_tp": 5,
+      "holdout_fp": 40,
+      "holdout_precision_pct": 11.1,
+      "false_positive_rate_pct": 83.3,
+      "status": "REJECTED_GUARDRAIL_FPR",
+      "bedrock_ms": 634.0,
+      "tokens": 222
+    }
+  ],
+  "epoch_progression": {
+    "holdout_size": 64,
+    "iteration_0_baseline": {
+      "defects_caught": 6,
+      "defects_total": 16,
+      "false_positives": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 37.5,
+      "f1_pct": 54.5
+    },
+    "iteration_1_self_learned": {
+      "defects_caught": 15,
+      "defects_total": 16,
+      "clean_protected": 48,
+      "false_positives": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 93.8,
+      "f1_pct": 96.8,
+      "recall_lift_pct_points": 56.2
+    }
+  }
+}
