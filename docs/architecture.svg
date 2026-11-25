@@ -14,7 +14,7 @@
 
   <!-- LAYER 1: BROWSER & SERVERLESS AWS EDGE -->
   <path d="M 22,18 Q 610,14 1196,19 Q 1201,92 1195,164 Q 608,168 24,163 Q 19,90 22,18 Z" fill="#FAFAFA" stroke="#71717A" stroke-width="1.6" stroke-dasharray="8 6" />
-  <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#C2410C">1. Browser &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + Python 3.12 Lambda)</text>
+  <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#C2410C">1. Browser &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + AWS Lambda)</text>
 
   <g>
     <path d="M 38,55 Q 136,52 234,56 Q 238,96 233,138 Q 135,141 39,137 Q 35,95 38,55 Z" fill="#DBEAFE" stroke="#18181B" stroke-width="2.1" />
@@ -50,7 +50,7 @@
 
   <g>
     <path d="M 640,100 Q 775,97 910,101 Q 913,127 909,153 Q 774,156 641,152 Q 637,126 640,100 Z" fill="#FFE8D6" stroke="#18181B" stroke-width="2" />
-    <text x="775" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API (Python 3.12)</text>
+    <text x="775" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API</text>
     <text x="775" y="142" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#9A3412">catalog_dawn/server.py · 512 MB</text>
   </g>
 

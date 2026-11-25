@@ -4,7 +4,7 @@
 - **Live `/api/health` Endpoint**: https://d2dk1vq5oz80zg.cloudfront.net/api/health
 - **GitHub Repository**: https://github.com/ritwikareddykancharla/catalog-dawn-sls
 
-CatalogDawn is a serverless catalog normalization and external offer ingestion pipeline deployed on **Amazon CloudFront + Private S3 (OAC) + AWS Lambda (`python3.12`) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-micro-v1:0` & `us.amazon.nova-lite-v1:0`)**.
+CatalogDawn is a serverless catalog normalization and external offer ingestion pipeline deployed on **Amazon CloudFront + Private S3 (OAC) + AWS Lambda (serverless) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-micro-v1:0` & `us.amazon.nova-lite-v1:0`)**.
 
 ![CatalogDawn System Architecture](docs/architecture.svg)
 
