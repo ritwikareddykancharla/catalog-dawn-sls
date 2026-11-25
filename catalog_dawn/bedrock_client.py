@@ -73,6 +73,8 @@ def converse_bedrock(
             session = boto3.Session(region_name=region)
         else:
             profile = os.environ.get("CATALOG_DAWN_AWS_PROFILE") or os.environ.get("AWS_PROFILE")
+            if profile == "trainium":
+                profile = "portfolio"
             if profile:
                 session = boto3.Session(profile_name=profile, region_name=region)
             else:
